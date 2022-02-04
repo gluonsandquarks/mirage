@@ -11,7 +11,7 @@ The art of the board itself is NOT done by me, it's all done by the wonderful [@
 The modules and components used in this board are the following:
 - ESP32-PICO-D4: MCU + BLE transciever.
 - CP2102-GMR: USB-to-UART converter. Needed to upload code and debug via UART.
-- S8050 NPN transistors: needed to detect automatically when code is beign uploaded to the MCU. 
+- S8050 NPN transistors: needed to detect automatically when code is being uploaded to the MCU. 
 - AMS1117-3.3: 5V to 3.3V regulator.
 - AO3401A P channel MOSFET: works as reverse polarity protection.
 - USBLC6-2SC6: diode array for ESD protection.
