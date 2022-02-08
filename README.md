@@ -2,11 +2,12 @@
 
 Custom PCB board inspired by the [#badgelife](https://www.youtube.com/watch?v=G2fHKRONc6U) and PCB Art movement. The "Mirage" badge represents to me a kind of miracle because it demonstrates that without prior knowledge, thanks to all the available free information out there, it is possible to build systems from scratch and, on top of that, style them and express ourselves.
 
-![3D View](/refImages/3d.png)
+![3D View](/refImages/demoMirage3d.png)
+![3D View Bottom](/refImages/demoMirage3dBottom.png)
 
 The art of the board itself is NOT done by me, it's all done by the wonderful [@OseanWorld](https://twitter.com/oseanworld). Huge props to Osean for keeping me and everyone in the community dreaming and doing art, and thanks for creating such a beautiful cyberspace.
 
-## Electronics
+## Hardware
 
 The modules and components used in this board are the following:
 - ESP32-PICO-D4: MCU + BLE transciever.
@@ -16,20 +17,23 @@ The modules and components used in this board are the following:
 - AO3401A P channel MOSFET: works as reverse polarity protection.
 - USBLC6-2SC6: diode array for ESD protection.
 - M7 Diode.
-- USB Micro B connector.
-- 3 push buttons.
+- USB Mini B connector.
+- 1 push buttons.
 - Shitload of capacitors, resistors, LEDs.
 
 All the references and datasheets of the components used in the schematic can be found in the `/datasheets` directory.
 
 If you want to learn the technicalities of designing a PCB yourself you can checkout [Phil's Lab youtube channel](https://www.youtube.com/c/PhilS94) for an intro to PCB design.
 
+### RF Section
+The design includes an RF portion which is *"designed"* for BLE communications. With "designed" being in quotes because this is my first RF design and my first time making a PCB trace antenna. The hard truth about RF is that there's no real way of tuning the antenna or making a matching Pi Network without some sort of expensive equipment (although the NanoVNAs are pretty cheap nowadays). I don't have access to these tools so I just winged it by calculating a 50 Ohm impedance microstrip line and using a 0 Ohm resistor as a jumper wire. The antenna trace is between 20 mm - 25 mm in length (given the 2.45 GHz frequency of BLE) but it's a mess right now and I don't know if it will work at all. I'll update this section once the PCBs arrive and I've written some firmware to make two boards talk to each other. 
+
 ## Firmware
 
 ## Art
 The art of this board was made entirely inside Inkscape and ported to KiCad thanks to the [svg2shenzhen](https://github.com/badgeek/svg2shenzhen) extension made by [@badgeek](https://github.com/badgeek). Also the great [video tutorial](https://www.youtube.com/watch?v=Sbkvza8cKQE) done by [@mrtwinkletwink](https://twitter.com/mrtwinkletwink) helped me a lot when it came to understand the different layers of the board and how to use svg2shenzhen in general.
 
-![PCB View](/refImages/pcb.png)
+![PCB View](/refImages/miragePCBNets.png)
 
 ## Directory Structure
 As you can see, right now the repo is pretty unorganized. Maybe I'll restructure it in the future, but as of now here are the main files:

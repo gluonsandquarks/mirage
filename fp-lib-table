@@ -1,3 +1,4 @@
 (fp_lib_table
   (lib (name "NuDeko")(type "KiCad")(uri "${KIPRJMOD}/nudeko.pretty")(options "")(descr ""))
+  (lib (name "NuDekoV3")(type "KiCad")(uri "${KIPRJMOD}/nudekov3.pretty")(options "")(descr ""))
 )
